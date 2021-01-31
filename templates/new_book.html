@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="formwrapper">
+  <h2 class="title">Search for a book</h2>
+  <form action='/new' method="POST">
+      <div class="form-field">{{ form.title.label }} {{ form.title(size=20) }}</div>
+      {{ form.submit }}
+  </form>
+</div>
+{% endblock %}
+
+<!--Need GET and POST so that user can be redirected after, CHANGE FORM ACTION(WHERE REDIRECTED)-->

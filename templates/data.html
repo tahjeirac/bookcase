@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid cadetblue;
+  font-family: verdana;
+  text-align: center;
+  color: darkolivegreen;
+}
+</style>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>GoodReads_Rating</th>
+        <th>Notes</th>
+    </tr>
+    {% for book in books %}
+        <!-- highlight row of duplicate book-->
+        {% if book['ID'] == id %}
+         <tr bgcolor="lightblue">
+            <td>{{book['ID']}}</td>
+             <td><a href={{book['URL']}}>
+                <img src={{book['Cover']}} alt="picture of book cover" />
+            </a></td>
+            <td>{{book['Title']}}</td>
+            <td>{{book['Author']}}</td>
+            <td>{{book['GoodReads_Rating']}}</td>
+            <td>{{book['Notes']}}</td>
+         </tr>
+        {% else %}
+        <tr bgcolor= #ffe4c4>
+            <td>{{book['ID']}}</td>
+            <td><a href={{book['URL']}}>
+                <img src={{book['Cover']}} alt="picture of book cover" />
+            </a>
+            </td>
+            <td>{{book['Title']}}</td>
+            <td>{{book['Author']}}</td>
+            <td>{{book['GoodReads_Rating']}}</td>
+            <td>{{book['Notes']}}</td>
+         </tr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+
+
+<!--bg colour is depreciated, change it to css-->

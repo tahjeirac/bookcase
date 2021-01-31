@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    p {
+        color: blueviolet;
+        font-family: "Bauhaus 93";
+    }
+    h2 {
+        color: cornflowerblue;
+        font-family: "Calisto MT";
+    }
+</style>
+<h2>{{ header }}  </h2>
+<div class="formwrapper">
+    <h3>books</h3>
+    <form action = '' method = "POST">
+        <div class="form-field">{{ form.books.label }} {{ form.books(size=20) }}</div>
+        {{ form.submit }}
+    </form>
+</div>
+
+{% endblock %}
